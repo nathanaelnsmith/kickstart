@@ -1,20 +1,25 @@
 extends _layout
 
 block hero-title
-  h1 Quickstart
+  h1 1. Quickstart
 
 block variables
   - var showFooter = false
-  - var title = 'Quickstart'
+  - var title = '1. Quickstart'
 
 block subMenuVars
   - var subMenuItem = "getstarted"
 
 block documents
-  include ../3.x/_includes/quickstart/_quickstart_header.jade
+  .document
+    article.article.article-full
+      :markdown
+        # 1. Quickstart
+
+        Installation instructions are available for [Simple HTML](#barebones), [Rails](#rails), and [Gulp](#gulp).
   .document
     article.article
-      h1 Barebones
+      h1 1A. Barebones
       h2 Head code
 
       :markdown
@@ -106,7 +111,7 @@ block documents
 
   .document
     article.article
-      h1 Rails
+      h1 1B. Rails
 
       :markdown
         Install the [Kickstart gem](https://rubygems.org/gems/kickstart_rails)
@@ -200,7 +205,7 @@ block documents
 
   .document
     article.article
-      h1 Gulp
+      h1 1C. Gulp
 
       :markdown
         My tool of choice for building all of Kickstart is gulp, plus a ton of
@@ -221,7 +226,7 @@ block documents
       :markdown
         <span>
 
-            $(~) git clone git@github.com:adamjgrant/kickstart.git mywebsite --depth 1
+            $(~) git clone git@github.com:adamjgrant/kickstart.git mywebsite
 
             # Install the dependencies
             $(~) cd mywebsite
@@ -229,49 +234,3 @@ block documents
 
             # If all goes well, this should launch your project.
             $(mywebsite) gulp
-
-
-  include ../3.x/_includes/quickstart/_jekyll.jade
-
-  .document
-    article.article
-      h1 Node.js
-
-      :markdown
-        Kickstart can easily be added as an npm package.
-        This will download the entire repo to a `node_modules` folder.
-
-    article.code
-      :markdown
-        <span>
-
-            npm install --save-dev kickstart-node
-
-  .document
-    article.article
-      :markdown
-        In your sass or scss file, import Kickstart via the theme you prefer:
-
-        Notice you may need a couple `../`s before `node_modules` to point
-        to the node_modules directory. This all depends on how you organized your
-        project.
-
-        In the example, node_modules is at the same level as the scss/sass
-        file.
-
-    article.code
-      :markdown
-        <span>
-
-            @import node_modules/kickstart-node/lib/sass/themes/default/theme
-
-  .document
-    article.article.article-full
-      :markdown
-        ## Autoprefixer
-
-        The chances are very good that you'll need to include [autoprefixer](https://github.com/postcss/autoprefixer).
-        This will add prefixes like `-webkit-` to bleeding edge css properties. Make sure
-        this is included as part of your CSS compilation workflow.
-
-        [Also available for Gulp](https://www.npmjs.org/package/gulp-autoprefixer)

@@ -1,0 +1,169 @@
+extends ../../_layout
+
+block hero-title
+  h1 2. Layout
+
+block variables
+  - var showFooter = false
+  - var title = '2. Layout'
+
+block subMenuVars
+  - var subMenuItem = "getstarted"
+
+block documents
+  .document
+    article.article.article-full
+      :markdown
+        # 2. Laying out the page
+
+        Now that you have some basic HTML properties in place, let's get the
+        content "wrapped" up.
+
+        Kickstart includes some simple and effective defaults for keeping proper
+        spacing and expansion on the body of the page. These work seamlessly with
+        grid tools as well.
+
+  .document
+    article.article
+      h1 Wrapper
+
+    article.code
+      :markdown
+        <span>
+
+            <div class="wrapper">
+              <h1>My page</h1>
+              <p>Welcome to my page</p>
+            </div>
+
+            .wrapper {
+              @include wrapper();
+            }
+  .document
+    article.article.article-full
+      :markdown
+        # Wrapper styles
+
+        Before you start adding components to your page, it's best to decide if
+        you want a fixed, fluid, or fixed-fluid layout.
+
+        ## Fixed layout
+
+        A fixed layout simply limits the width of the layout to a certain amount.
+
+      iframe.animation(scrolling="no" src="/iframes/layout-fixed/fixed.html")
+
+  .document
+    article.article
+      .if-semantic
+        :markdown
+          For a fixed wrapper, create a fluid wrapper around your content with `$fluid; true`.
+            Now you just need to limit that fluidity with a max-width property.
+
+      .ifnot-semantic
+        :markdown
+          For a fixed wrapper, use the `.wrapper.wrapper-fixed` classes.
+      :markdown
+        The default max-width is about 768px, however, you can define your own by adding
+        a `max-width` property.
+
+    article.code
+      .if-semantic
+        :markdown
+          <span>
+
+              <div class="wrapper">
+                <h1>Hello world</h1>
+              </div>
+
+              .wrapper{
+                @include wrapper($fluid: true);
+                max-width: 700px;
+              }
+
+      .ifnot-semantic
+        :markdown
+          <span>
+
+              <div class="wrapper wrapper-fixed">
+                <h1>Hello world</h1>
+              </div>
+
+              .wrapper.wrapper-fixed {
+                max-width: 700px; // if 768px is not sufficient
+              }
+
+  .document
+    article.article
+      :markdown
+        ## Fluid layout
+
+        A fluid layout allows the width of the content to match the width of the viewport
+
+      iframe.animation(scrolling="no" src="/iframes/layout-fluid/fluid.html")
+
+      :markdown
+        For a fluid wrapper <span class="if-semantic"> use the mixin
+        <code>wrapper($fluid: true)</code></span>
+
+        To have elements break out of a wrapper (called "bleeding"), just
+        end the wrapper before the bleed content and open it back up afterwards.
+
+    article.code
+      .if-semantic
+        :markdown
+          <span>
+
+              .wrapper {
+                @include wrapper($fluid: true);
+              }
+
+      .ifnot-semantic
+        :markdown
+          <span>
+
+              <div class="wrapper wrapper-fluid">
+                ...
+              </div>
+
+  .document
+    article.article.article-full
+      :markdown
+        ## Fluid-fixed layout
+
+        This layout is the default behavior for a wrapper in Kickstart and
+        combines the best of both worlds.
+
+        Instead of constantly resizing to the size of the viewport, a new fixed
+        width is used at each breakpoint.
+
+      iframe.animation(scrolling="no" src="/iframes/layout-fluid-fixed/fluid-fixed.html")
+
+  .document
+    article.article
+      :markdown
+        Create a wrapper around your content <span class="if-semantic">and use the mixin
+        <code>wrapper()</code></span><span class="ifnot-semantic">and
+        use the <code>.wrapper</code> class.
+
+    article.code
+      .if-semantic
+        :markdown
+          <span>
+
+              <div class="wrapper">
+                <h1>Hello world</h1>
+              </div>
+
+              .wrapper{
+                @include wrapper();
+              }
+
+      .ifnot-semantic
+        :markdown
+          <span>
+
+              <div class="wrapper">
+                <h1>Hello world</h1>
+              </div>
+
