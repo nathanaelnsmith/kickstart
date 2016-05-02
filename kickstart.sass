@@ -301,12 +301,12 @@ $showFullColumns:    $desktop          // Actual user-defined column measurement
     @media screen and (min-width: $showColumns)
       +set-column($columns, $left, $right)
 
-// 2 Direct Applications
+// 2.0 DIRECT APPLICATIONS
 // Diret applications of the above mixins...just in case your theme file didn't
 // specify them already.
 
-=table($blank, $zebra:, $hover, $border-color, $bordered)
-  +table-default($blank, $zebra, $hover, $border-color, $bordered)
+=table($args...)
+  +table-default($args...)
 
 =wrapper($fluid)
-  +wrapper-default($fluid)
+  +wrapper-default($args...)

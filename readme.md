@@ -53,8 +53,8 @@ you want to extend.
 
     @import "kickstart"
 
-    =table
-      +table
+    =table($args...)
+      +table-default($args...)
       background: blue // In this theme, all the tables are blue!
 
 Now your website's sass file will import the theme with kickstart already inside it
