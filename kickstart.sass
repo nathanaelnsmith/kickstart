@@ -300,3 +300,13 @@ $showFullColumns:    $desktop          // Actual user-defined column measurement
     // No keywords found, pass in values.
     @media screen and (min-width: $showColumns)
       +set-column($columns, $left, $right)
+
+// 2 Direct Applications
+// Diret applications of the above mixins...just in case your theme file didn't
+// specify them already.
+
+=table($blank, $zebra:, $hover, $border-color, $bordered)
+  +table-default($blank, $zebra, $hover, $border-color, $bordered)
+
+=wrapper($fluid)
+  +wrapper-default($fluid)

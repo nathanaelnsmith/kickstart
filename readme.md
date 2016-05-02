@@ -31,3 +31,34 @@ shorthand functions to style and bind the `"document"` scope with `.start`,
 `.document`, and `.status`
 
 [More on Scoped Components](https://gist.github.com/adamjgrant/599530dab67db17c5b2d)
+
+Following this pattern, the CSS library includes components and elements. These are
+designed to be extended via Sass theme files. Creating themes and extending is
+stupidly simple.
+
+### Extendable
+
+Extending kickstart and creating themes couldn't be easier.
+
+Without a theme, you'll just import kickstart.sass
+
+    @import "kickstart"
+
+    // My styles
+
+With a theme, create a sass file that includes kickstart and define the components
+you want to extend.
+
+    // cooltheme.sass
+
+    @import "kickstart"
+
+    =table
+      +table
+      background: blue // In this theme, all the tables are blue!
+
+Now your website's sass file will import the theme with kickstart already inside it
+
+    @import "cooltheme"
+
+    // My styles
