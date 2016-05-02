@@ -13,7 +13,6 @@ bower_components
 *.a
 /rails
 mkmf.log
-kickstart.js
 kickstart.min.js
 kickstart.css
 kickstart.min.css
