@@ -11,7 +11,7 @@ h2
   +heading-xs
 
 h3, h4, h5, h6
-  +heading-xxs 
+  +heading-xxs
 
 .alert
   +alert
@@ -62,9 +62,9 @@ h3, h4, h5, h6
 
     @media screen and (min-width: $tablet)
       width: 75%
-
-    @media screen and (min-width: $large-monitor)
-      width: 80%
+    //
+    // @media screen and (min-width: $large-monitor)
+    //   width: 80%
 
   .fixed-toc
     width: 100%
@@ -105,7 +105,7 @@ h3, h4, h5, h6
         bottom: 0
 
       > li
-        margin-bottom: 0 
+        margin-bottom: 0
 
         a
           font-weight: bold
@@ -167,7 +167,7 @@ h3, h4, h5, h6
                             margin-bottom: 0
 
     h1
-      +heading-xs 
+      +heading-xs
 
     @media screen and(min-width: $phablet)
       padding: $space
@@ -176,12 +176,12 @@ h3, h4, h5, h6
     @media screen and (min-width: $tablet)
       width: 25%
 
-    @media screen and (min-width: $large-monitor)
-      width: 20%
+    // @media screen and (min-width: $large-monitor)
+    //   width: 20%
 
   // When in fixed position
   body.fixed-nav &
-    .fixed-toc 
+    .fixed-toc
       @media screen and (min-width: $phablet)
         position: fixed
         top: 0px
@@ -194,7 +194,7 @@ h3, h4, h5, h6
         right: 75%
 
       @media screen and (min-width: $large-monitor)
-        right: 80% 
+        right: 80%
 
       @media screen and (min-width: $xl-monitor)
         left: calc(50vw - #{$xl-monitor/2})
@@ -212,8 +212,8 @@ h3, h4, h5, h6
       @media screen and (min-width: $tablet)
         margin-left: 25%
 
-      @media screen and (min-width: $large-monitor)
-        margin-left: 20%
+      // @media screen and (min-width: $large-monitor)
+      //   margin-left: 20%
 
 .document
   margin-bottom: $space * 4
@@ -340,7 +340,7 @@ body.show-semantic
 
   span.if-semantic
     display: inline
-    
+
 body.show-jquery
   .ifnot-jquery
     display: none
