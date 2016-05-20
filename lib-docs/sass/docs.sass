@@ -141,3 +141,21 @@ svg.icon
 
 .switch
   +switch
+
+.adsbygoogle
+
+  @media screen and (max-width: #{$phablet + 1})
+    margin: 0px auto !important
+    display: block !important
+
+  @media screen and (min-width: #{$phablet}) and (max-width: #{$tablet+1})
+    margin-left: -25px !important
+
+  @media screen and (min-width: #{$tablet}) and (max-width: #{$desktop+1})
+    display: none !important
+
+  @media screen and (min-width: #{$desktop})
+    margin-left: -10px !important
+
+  iframe
+    padding: 0
