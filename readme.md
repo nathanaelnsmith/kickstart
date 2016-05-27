@@ -13,10 +13,38 @@ extendable by design.
 
 ## Features
 
+### Extendable
+
+Extending kickstart and creating themes couldn't be easier.
+
+Without a theme, you'll just import kickstart.sass
+
+    @import "kickstart"
+
+    // My styles
+
+With a theme, your website's sass file will import the theme with kickstart already inside it.
+
+    @import "cooltheme"
+
+    // My styles
+    
+The theme is a sass file that includes kickstart and defines just the components it wants to extend.
+
+    // cooltheme.sass
+
+    @import "kickstart"
+
+    =table($args...)
+      +table-default($args...)
+      background: blue // In this theme, all the tables are blue!
+
 ### Tiny
 
 Kickstart has no JS dependencies and only needs Sass support. The entire
 framework is just two files: kickstart.sass and kickstart.js.
+
+And yes, we have a CDN.
 
 ### Component driven
 
@@ -35,30 +63,3 @@ shorthand functions to style and bind the `"document"` scope with `.start`,
 Following this pattern, the CSS library includes components and elements. These are
 designed to be extended via Sass theme files. Creating themes and extending is
 stupidly simple.
-
-### Extendable
-
-Extending kickstart and creating themes couldn't be easier.
-
-Without a theme, you'll just import kickstart.sass
-
-    @import "kickstart"
-
-    // My styles
-
-With a theme, create a sass file that includes kickstart and define the components
-you want to extend.
-
-    // cooltheme.sass
-
-    @import "kickstart"
-
-    =table($args...)
-      +table-default($args...)
-      background: blue // In this theme, all the tables are blue!
-
-Now your website's sass file will import the theme with kickstart already inside it
-
-    @import "cooltheme"
-
-    // My styles
