@@ -38,6 +38,10 @@ The theme is a sass file that includes kickstart and defines just the components
     =table($args...)
       +table-default($args...)
       background: blue // In this theme, all the tables are blue!
+      
+#### Download third party themes and extensions
+
+Third-party themes can be downloaded via the Kickstart Store.
 
 ### Tiny
 
