@@ -190,100 +190,100 @@ form
 
 =tooltip-classes
 
-[data-ks-tooltip]
-  position: relative
+  [data-ks-tooltip]
+    position: relative
 
-  +pseudo-tooltip-color
-
-  &:after
-    content: attr(data-ks-tooltip)
-    +tooltip_base
-    transform: translateY(0px)
-    z-index: 10
-
-  &:before
-    +tooltip_arrow
-    bottom: 100%
-    z-index: 100
-
-  &:hover
-    &:after, &:before
-      opacity: 1
+    +pseudo-tooltip-color
 
     &:after
-      transform: translateY(-8px)
-      transition: transform 0.25s
-
-  // Positioning
-
-  &[data-ks-tooltip-position="bottom"]
-    &:after
-      top: 100%
-      bottom: auto
-      margin-top: 15px
-      transform: translateY(-6px)
+      content: attr(data-ks-tooltip)
+      +tooltip_base
+      transform: translateY(0px)
+      z-index: 10
 
     &:before
-      transform: rotate(180deg)
-      top: 100%
-      bottom: auto
+      +tooltip_arrow
+      bottom: 100%
+      z-index: 100
 
-  &[data-ks-tooltip-position="left"]
-    &:after
-      transform: translateY(6px)
-      top: 50%
-      bottom: auto
-      margin:
-        top: -19px
-        right: 12px
-      left: auto
-      right: 100%
+    &:hover
+      &:after, &:before
+        opacity: 1
 
-    &:before
-      transform: rotate(-90deg)
-      top: 50%
-      margin-top: -6px
-      bottom: auto
-      left: auto
-      right: 100%
+      &:after
+        transform: translateY(-8px)
+        transition: transform 0.25s
 
-  &[data-ks-tooltip-position="right"]
-    &:after
-      transform: translateY(6px)
-      top: 50%
-      bottom: auto
-      margin:
-        top: -19px
-        left: 16px
-      left: 100%
-      right: auto
+    // Positioning
 
-    &:before
-      transform: rotate(90deg)
-      top: 50%
-      margin-top: -6px
-      margin-left: 4px
-      bottom: auto
-      left: 100%
-      right: auto
+    &[data-ks-tooltip-position="bottom"]
+      &:after
+        top: 100%
+        bottom: auto
+        margin-top: 15px
+        transform: translateY(-6px)
 
-  &[data-ks-tooltip-color="red"]
-    +pseudo-tooltip-color(map-get($colors, red))
+      &:before
+        transform: rotate(180deg)
+        top: 100%
+        bottom: auto
 
-  &[data-ks-tooltip-color="orange"]
-    +pseudo-tooltip-color(map-get($colors, orange))
+    &[data-ks-tooltip-position="left"]
+      &:after
+        transform: translateY(6px)
+        top: 50%
+        bottom: auto
+        margin:
+          top: -19px
+          right: 12px
+        left: auto
+        right: 100%
 
-  &[data-ks-tooltip-color="yellow"]
-    +pseudo-tooltip-color(map-get($colors, yellow))
+      &:before
+        transform: rotate(-90deg)
+        top: 50%
+        margin-top: -6px
+        bottom: auto
+        left: auto
+        right: 100%
 
-  &[data-ks-tooltip-color="green"]
-    +pseudo-tooltip-color(map-get($colors, green))
+    &[data-ks-tooltip-position="right"]
+      &:after
+        transform: translateY(6px)
+        top: 50%
+        bottom: auto
+        margin:
+          top: -19px
+          left: 16px
+        left: 100%
+        right: auto
 
-  &[data-ks-tooltip-color="blue"]
-    +pseudo-tooltip-color(map-get($colors, blue))
+      &:before
+        transform: rotate(90deg)
+        top: 50%
+        margin-top: -6px
+        margin-left: 4px
+        bottom: auto
+        left: 100%
+        right: auto
 
-  &[data-ks-tooltip-color="violet"]
-    +pseudo-tooltip-color(map-get($colors, violet))
+    &[data-ks-tooltip-color="red"]
+      +pseudo-tooltip-color(map-get($colors, red))
+
+    &[data-ks-tooltip-color="orange"]
+      +pseudo-tooltip-color(map-get($colors, orange))
+
+    &[data-ks-tooltip-color="yellow"]
+      +pseudo-tooltip-color(map-get($colors, yellow))
+
+    &[data-ks-tooltip-color="green"]
+      +pseudo-tooltip-color(map-get($colors, green))
+
+    &[data-ks-tooltip-color="blue"]
+      +pseudo-tooltip-color(map-get($colors, blue))
+
+    &[data-ks-tooltip-color="violet"]
+      +pseudo-tooltip-color(map-get($colors, violet))
 
 .tooltip
   +tooltip_base
